@@ -55,8 +55,9 @@ replacedash =dashes();
 for (var i = 10; i > 0; i--) {
    
 //activating the key press to get user input
-document.onkeydown = function (event) {
-    var userinput = event.key;
+document.onkeyup = function (event) {
+    var userInput = event.key;
+    var userinput=userInput.toLowerCase();
   
     // this is the function to get each letter
     for (var i = 0; i < newword.length; i++) {
