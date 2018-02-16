@@ -24,7 +24,7 @@ function resetvalue(){
     guess = 10;
     userinput=[];
     var guessedsofar = document.getElementById("guess-so-far");
-    guessedsofar.innerHTML = userinput;
+    guessedsofar.innerHTML ="";
     var dashword = document.getElementById("word");
     dashword .innerHTML = replacedash;
     var guessindex = document.getElementById("guess-left");
@@ -55,11 +55,9 @@ replacedash =dashes();
 for (var i = 10; i > 0; i--) {
    
 //activating the key press to get user input
-document.onkeyup = function (event) {
-  
+document.onkeydown = function (event) {
     var userinput = event.key;
-    console.log(" this is the user letter" + event.key);
-    if( newword != replacedash){
+  
     // this is the function to get each letter
     for (var i = 0; i < newword.length; i++) {
         console.log(newword.charAt(i));
@@ -69,23 +67,17 @@ document.onkeyup = function (event) {
            replacedash[i]=userinput;
            //check the won funtion
           if(!replacedash.includes("-")){
-              console.log("breaking out");
-            break;
+              alert("Yeah you won lets start a new game");
+              resetvalue();
+              return; 
           }
-            console.log("yes there is a  :" + userinput);
-            console.log("checking the userinput in the dash array "+replacedash );
-
+          
         } else {      
            
             console.log("guesswords so far : " + userinput);
         }
         
     }
-}
-else{
-    alert("Yeah you won lets start a new game");
-    resetvalue();
-}
   
     //writing the guessed so far letters into the document
     var guessedsofar = document.getElementById("guess-so-far");
