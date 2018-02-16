@@ -95,3 +95,14 @@ document.onkeyup = function (event) {
 
 
 };
+
+
+
+
+
+if( newword != replacedash){
+    console.log(" print from won  "+ newword+"   "+replacedash);
+
+    alert("Yeah you won lets start a new game");
+    resetvalue();
+}

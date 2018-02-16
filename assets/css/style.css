@@ -1,4 +1,24 @@
-.img-responsive{
-    margin-left: 35%;
+.man{
+    margin-left: 25%;
     margin-top: 20px;
+}
+h1{
+    color: 
+}
+.border1{
+    border: 4px dotted black;
+    padding: 65px;
+}
+.border2{
+    border: 4px dotted black;
+    padding: 50px;
+}
+.play{
+    width: 250px;
+}
+.rowtop{
+margin-top: 15px;
+}
+.cont{
+
 }

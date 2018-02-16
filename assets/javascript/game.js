@@ -59,16 +59,19 @@ document.onkeyup = function (event) {
   
     var userinput = event.key;
     console.log(" this is the user letter" + event.key);
-   
+    if( newword != replacedash){
     // this is the function to get each letter
     for (var i = 0; i < newword.length; i++) {
         console.log(newword.charAt(i));
 
         //checking the userinput with computer word
-        if (userinput === newword.charAt(i)) {
+        if (userinput === newword.charAt(i) ) {
            replacedash[i]=userinput;
            //check the won funtion
-          
+          if(!replacedash.includes("-")){
+              console.log("breaking out");
+            break;
+          }
             console.log("yes there is a  :" + userinput);
             console.log("checking the userinput in the dash array "+replacedash );
 
@@ -78,6 +81,11 @@ document.onkeyup = function (event) {
         }
         
     }
+}
+else{
+    alert("Yeah you won lets start a new game");
+    resetvalue();
+}
   
     //writing the guessed so far letters into the document
     var guessedsofar = document.getElementById("guess-so-far");
@@ -92,12 +100,7 @@ document.onkeyup = function (event) {
   guess--;
  //this function is to check if we won
 
-    if( newword === replacedash){
-        console.log(" print from won  "+ newword+"   "+replacedash);
-    
-        alert("Yeah you won lets start a new game");
-        resetvalue();
-    }
+   
     
   if (guess < 0) {
       alert("You are starting a new game");
